@@ -14,8 +14,8 @@ An intelligent document processing API & UI powered by the **Qwen3-VL** multimod
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/ituvtu/doc-digitizer.git](https://github.com/ituvtu/doc-digitizer.git)
-   cd doc-digitizer
+   git clone [https://github.com/ituvtu/qwen-doc-parser.git](https://github.com/ituvtu/qwen-doc-parser.git)
+   cd qwen-doc-parser
     ```
 2. Сreate a virtual environment and install dependencies:
     ```bash
@@ -33,9 +33,15 @@ An intelligent document processing API & UI powered by the **Qwen3-VL** multimod
 4. ▶️ Usage
 
     **Run with Docker (Recommended)**
+    
+    Option A: Using .env file (Best for security)
     ```bash
-    docker build -t doc-parser .
-    docker run -p 7860:7860 --env-file .env doc-parser
+    docker build -t qwen-doc-parser .
+    docker run -p 7860:7860 --env-file .env qwen-doc-parser
+    ```
+    Option B: Passing token directly
+    ```bash
+    docker run -p 7860:7860 -e HF_TOKEN=hf_YourTokenHere qwen-doc-parser
     ```
     **Run Locally**
     ```bash
