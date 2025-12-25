@@ -14,7 +14,7 @@ An intelligent document processing API & UI powered by the **Qwen3-VL** multimod
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/ituvtu/qwen-doc-parser.git](https://github.com/ituvtu/qwen-doc-parser.git)
+   git clone https://github.com/ituvtu/qwen-doc-parser.git
    cd qwen-doc-parser
     ```
 2. Сreate a virtual environment and install dependencies:
