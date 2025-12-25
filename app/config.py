@@ -1,19 +1,17 @@
-import os
 from functools import lru_cache
-from dotenv import load_dotenv
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-load_dotenv()
-
-class Settings:
-    HF_TOKEN: str = os.getenv("HF_TOKEN", "")
+class Settings(BaseSettings):
+    HF_TOKEN: str
     
-    HF_API_URL: str = "https://router.huggingface.co/v1/chat/completions"
+    HF_BASE_URL: str = "https://router.huggingface.co/v1"
     
     MODEL_ID: str = "Qwen/Qwen3-VL-8B-Instruct:novita"
     
-    BACKUP_API_URL: str = os.getenv("BACKUP_API_URL", "")
     MAX_RETRIES: int = 3
     TIMEOUT: int = 120
+
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
 @lru_cache()
 def get_settings() -> Settings:
